@@ -13,6 +13,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.redColor()
+        let manager = AFHTTPRequestOperationManager()
+        manager.GET("https://api.github.com/users/octocat/orgs", parameters: nil,
+            success: {(operation, responseObject) in
+                print("Success! \(operation)")
+            },
+            failure: {(operation, error) in
+                print("Error: \(error)")
+            }
+        )
     }
 
     override func didReceiveMemoryWarning() {
