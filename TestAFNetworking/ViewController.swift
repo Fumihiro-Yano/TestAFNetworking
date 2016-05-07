@@ -14,9 +14,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.redColor()
         let manager = AFHTTPRequestOperationManager()
-        manager.GET("https://api.github.com/users/octocat/orgs", parameters: nil,
+//        manager.requestSerializer.setValue("api-key", forHTTPHeaderField: "test_key")
+        manager.GET("http://localhost:3000/api/items", parameters: nil,
             success: {(operation, responseObject) in
-                print("Success! \(operation)")
+                print("Success! \(responseObject)")
             },
             failure: {(operation, error) in
                 print("Error: \(error)")
