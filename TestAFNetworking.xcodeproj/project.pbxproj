@@ -14,6 +14,7 @@
 		E73BFBAB1CDE3A9D000D031C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73BFBA91CDE3A9D000D031C /* LaunchScreen.storyboard */; };
 		E73BFBB61CDE3A9D000D031C /* TestAFNetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73BFBB51CDE3A9D000D031C /* TestAFNetworkingTests.swift */; };
 		E73BFBC11CDE3A9D000D031C /* TestAFNetworkingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73BFBC01CDE3A9D000D031C /* TestAFNetworkingUITests.swift */; };
+		E7CD25751CDF3C1F00F45609 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CD25741CDF3C1F00F45609 /* ApiManager.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		E73BFBC01CDE3A9D000D031C /* TestAFNetworkingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAFNetworkingUITests.swift; sourceTree = "<group>"; };
 		E73BFBC21CDE3A9D000D031C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7CD25731CDE459900F45609 /* TestAFNetworking-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestAFNetworking-Bridging-Header.h"; sourceTree = "<group>"; };
+		E7CD25741CDF3C1F00F45609 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				E73BFBA91CDE3A9D000D031C /* LaunchScreen.storyboard */,
 				E73BFBAC1CDE3A9D000D031C /* Info.plist */,
 				E7CD25731CDE459900F45609 /* TestAFNetworking-Bridging-Header.h */,
+				E7CD25741CDF3C1F00F45609 /* ApiManager.swift */,
 			);
 			path = TestAFNetworking;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E73BFBA31CDE3A9D000D031C /* ViewController.swift in Sources */,
+				E7CD25751CDF3C1F00F45609 /* ApiManager.swift in Sources */,
 				E73BFBA11CDE3A9D000D031C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
