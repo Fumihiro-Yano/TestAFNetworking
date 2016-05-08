@@ -20,7 +20,7 @@ class ApiManager {
 
     class func getApi() {
         let api = ApiManager()
-        let path = "/api/items"
+        let path = "/api/items/"
         let url = api.baseURL + path
         let manager = AFHTTPRequestOperationManager()
         manager.requestSerializer.setValue(api.apiKey, forHTTPHeaderField: api.headerField)
@@ -46,7 +46,7 @@ class ApiManager {
     
     class func postApi() {
       let api = ApiManager()
-      let path = "/api/items"
+      let path = "/api/items/"
       let url = api.baseURL + path
       let params:Dictionary<String, String> = ["item[name]" : "ドラえもん", "item[price]" : "2000", "item[description]" : "不二子不二雄によって書かれた本である。"]
       let manager = AFHTTPRequestOperationManager()
@@ -71,6 +71,33 @@ class ApiManager {
         )
     }
     
+    class func putApi() {
+        let api = ApiManager()
+        let path = "/api/items/"
+        let itemID = "1"
+        let url = api.baseURL + path + itemID
+        let params:Dictionary<String, String> = ["item[name]" : "僕は猫である。"]
+        let manager = AFHTTPRequestOperationManager()
+        manager.requestSerializer.setValue(api.apiKey, forHTTPHeaderField: api.headerField)
+        manager.responseSerializer = AFHTTPResponseSerializer()
+        manager.PUT(url, parameters: params,
+            success: {(operation, responseObject) in
+                do {
+                    api.json = try NSJSONSerialization.JSONObjectWithData(responseObject as! NSData, options: .MutableContainers) as! NSDictionary
+                    //                    let items = api.json["items"] as! NSArray
+                    //                    let item = items.objectAtIndex(0)
+                    let name = api.json["name"] as! NSString
+                    print(name)
+                } catch  {
+                    // エラー処理
+                }
+                print("Success! \(api.json)")
+            },
+            failure: {(operation, error) in
+                print("Error: \(error)")
+            }
+        )
+    }
     
     
 }
