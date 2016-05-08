@@ -99,5 +99,28 @@ class ApiManager {
         )
     }
     
+    class func deleteApi() {
+        let api = ApiManager()
+        let path = "/api/items/"
+        let itemID = "22"
+        let url = api.baseURL + path + itemID
+        let manager = AFHTTPRequestOperationManager()
+        manager.requestSerializer.setValue(api.apiKey, forHTTPHeaderField: api.headerField)
+        manager.responseSerializer = AFHTTPResponseSerializer()
+        manager.DELETE(url, parameters: nil,
+            success: {(operation, responseObject) in
+                do {
+                    api.json = try NSJSONSerialization.JSONObjectWithData(responseObject as! NSData, options: .MutableContainers) as! NSDictionary
+                    print(api.json)
+                } catch  {
+                    // エラー処理
+                }
+                print("Success! \(api.json)")
+            },
+            failure: {(operation, error) in
+                print("Error: \(error)")
+            }
+        )
+    }
     
 }

@@ -15,9 +15,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.redColor()
-          ApiManager.getApi()
+//        ApiManager.getApi()
 //        ApiManager.postApi()
-//          ApiManager.putApi()
+//        ApiManager.putApi()
+          ApiManager.deleteApi()
     }
 
     override func didReceiveMemoryWarning() {
